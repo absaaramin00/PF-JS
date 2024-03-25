@@ -1025,21 +1025,21 @@ console.log("Reversed string:", reversedString);
 // *** 49th Question *** //
 `Write a JavaScript program to replace every character in a given string with the character following it in the alphabet.  `;
 function replaceWithNextCharacter(str) {
-  let result = '';
+  let result = "";
   for (let i = 0; i < str.length; i++) {
-      let charCode = str.charCodeAt(i);
+    let charCode = str.charCodeAt(i);
 
-      // Check if the character is a lowercase letter
-      if (charCode >= 97 && charCode <= 122) {
-          charCode = (charCode - 97 + 1) % 26 + 97; // Apply wrapping for lowercase letters
-      }
-      // Check if the character is an uppercase letter
-      else if (charCode >= 65 && charCode <= 90) {
-          charCode = (charCode - 65 + 1) % 26 + 65; // Apply wrapping for uppercase letters
-      }
-      // For any other characters, leave them unchanged
+    // Check if the character is a lowercase letter
+    if (charCode >= 97 && charCode <= 122) {
+      charCode = ((charCode - 97 + 1) % 26) + 97; // Apply wrapping for lowercase letters
+    }
+    // Check if the character is an uppercase letter
+    else if (charCode >= 65 && charCode <= 90) {
+      charCode = ((charCode - 65 + 1) % 26) + 65; // Apply wrapping for uppercase letters
+    }
+    // For any other characters, leave them unchanged
 
-      result += String.fromCharCode(charCode);
+    result += String.fromCharCode(charCode);
   }
   return result;
 }
